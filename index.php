@@ -41,10 +41,9 @@ if (isset($argc) && $argc > 1) {
             }
 
             $time_start = microtime(true); 
-            for ($i=0; $i<$argv[3]; $i++) {
+            for ($i=1; $i<=$argv[3]; $i++) {
                 $disburseHandler->CheckTimeExecution($argv[2]);
-                $data = $i+1;
-                echo 'Total execution ' . $data . ' data time: ' . (microtime(true) - $time_start) . "s \n";
+                echo 'Total execution ' . $i . ' data time: ' . (microtime(true) - $time_start) . "s \n";
             }
 
             // echo 'Total execution time in seconds: ' . (microtime(true) - $time_start);
