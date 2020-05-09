@@ -1,5 +1,6 @@
 <?php
 
+require("config.php");
 class ApiCall
 {
     private $basicAuthUsername = BASIC_AUTH_USERNAME;
