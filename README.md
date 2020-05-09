@@ -1,5 +1,8 @@
 # How to use it
+1. Run migration
+`php migration.php`
 
+2. Run command
 `php index.php` + command
 
 # Command

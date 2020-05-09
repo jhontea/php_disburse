@@ -1,14 +1,15 @@
 <?php
 
+require("config.php");
 include("response.php");
 include("disburse_repository.php");
 include("disburse_service.php");
 include("disburse_handler.php");
 
-const CommandAll       = "all";
+const CommandAll            = "all";
 const CommandDisburse       = "disburse";
 const CommandDisburseStatus = "disburse-status";
-const CommandTimeExecution = "time";
+const CommandTimeExecution  = "time";
 
 $response = new Response();
 $disburseRepository = new DisburseRepository();
