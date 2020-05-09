@@ -6,7 +6,8 @@ class ApiCall
 
     public $url;
 
-    public function __construct($url, $method, $formParam){
+    public function __construct($url, $method, $formParam)
+    {
         $this->url          = $url;
         $this->method       = $method;
         $this->formParam    = $formParam;
