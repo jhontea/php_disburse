@@ -16,7 +16,7 @@ class ApiCall
     {
         $curl = curl_init();
 
-        curl_setopt_array($curl, array(
+        curl_setopt_array($curl, [
             CURLOPT_URL             => $this->url,
             CURLOPT_RETURNTRANSFER  => true,
             CURLOPT_HEADER          => 1,
@@ -26,11 +26,11 @@ class ApiCall
             CURLOPT_HTTP_VERSION    => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST   => $this->method,
             CURLOPT_POSTFIELDS      => json_encode($this->formParam),
-            CURLOPT_HTTPHEADER => array(
+            CURLOPT_HTTPHEADER      => [
                 "Content-Type: application/json"
-            ),
-            CURLOPT_USERPWD => $this->basicAuthUsername . ":",
-        ));
+            ],
+            CURLOPT_USERPWD         => $this->basicAuthUsername . ":",
+        ]);
         
         $response = curl_exec($curl);
         
