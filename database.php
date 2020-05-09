@@ -58,6 +58,11 @@ class Database
         $this->stmt->execute();
     }
 
+    public function executeFields($fields)
+    {
+        $this->stmt->execute($fields);
+    }
+
     public function resultSet()
     {
         $this->execute();

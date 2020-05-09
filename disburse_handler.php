@@ -16,17 +16,23 @@ class DisburseHandler
         $requestData = [
             "bank_code"       => "303",
             "account_number"  => "12345678",
-            "amount"          => 1000,
+            "amount"          => 25000,
             "remark"          => "remark"
         ];
 
-        $result = $this->service->PostDisburseRequest($requestData);
+        $result = $this->service->CreateDisburse($requestData);
         $this->resp->response($result);
     }
 
     public function GetDisburseStatus($transactionID)
     {
-        $result = $this->service->GetDisburseStatusRequest($transactionID);
+        $result = $this->service->UpdateDisburseStatus($transactionID);
+        $this->resp->response($result);
+    }
+
+    public function ShowAll()
+    {
+        $result = $this->service->ShowAll();
         $this->resp->response($result);
     }
 }

@@ -1,18 +1,25 @@
 <?php
 
 include("response.php");
+include("disburse_repository.php");
 include("disburse_service.php");
 include("disburse_handler.php");
 
+const CommandAll       = "all";
 const CommandDisburse       = "disburse";
 const CommandDisburseStatus = "disburse-status";
 
 $response = new Response();
-$disburseService = new DisburseService();
+$disburseRepository = new DisburseRepository();
+$disburseService = new DisburseService($disburseRepository);
 $disburseHandler = new DisburseHandler($disburseService, $response);
 
 if (isset($argc) && $argc > 1) {
     switch ($argv[1]) {
+        case CommandAll:
+            echo "show all disburse\n";
+            $disburseHandler->ShowAll();
+            break;
         case CommandDisburse:
             echo "send disburse\n";
             $disburseHandler->SendDisburse();
