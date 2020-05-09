@@ -30,6 +30,11 @@ class DisburseHandler
         $this->resp->response($result);
     }
 
+    public function CheckTimeExecution($transactionID)
+    {
+        $result = $this->service->UpdateDisburseStatus($transactionID);
+    }
+
     public function ShowAll()
     {
         $result = $this->service->ShowAll();
